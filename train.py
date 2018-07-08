@@ -29,13 +29,13 @@ for e in range(episode_count + 1):
 
 		if action == 1: # buy
 			agent.inventory.append(data[t])
-			print ("Buy: " + formatPrice(data[t]))
+			print ("B: " + formatPrice(data[t]))
 
 		elif action == 2 and len(agent.inventory) > 0: # sell
 			bought_price = agent.inventory.pop(0)
 			reward = max(data[t] - bought_price, 0)
 			total_profit += data[t] - bought_price
-			print ("Sell: " + formatPrice(data[t]) + " | Profit: " + formatPrice(data[t] - bought_price))
+			print ("S: " + formatPrice(data[t]) + " | P: " + formatPrice(data[t] - bought_price))
 
 		done = True if t == l - 1 else False
 		agent.memory.append((state, action, reward, next_state, done))
@@ -43,7 +43,7 @@ for e in range(episode_count + 1):
 
 		if done:
 			print ("--------------------------------")
-			print ("Total Profit: " + formatPrice(total_profit))
+			print ("TP: " + formatPrice(total_profit))
 			print ("--------------------------------")
 
 		if len(agent.memory) > batch_size:
