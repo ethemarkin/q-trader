@@ -6,9 +6,9 @@ from googlefinance.client import get_price_data, get_prices_data, get_prices_tim
 
 param = {
     'q': "ASELS", # Stock symbol (ex: "AAPL")
-    'i': "86400", # Interval size in seconds ("86400" = 1 day intervals)
+    'i': "900", # Interval size in seconds ("86400" = 1 day intervals)
     'x': "IST", # Stock exchange symbol on which stock is traded (ex: "NASD")
-    'p': "10Y" # Period (Ex: "1Y" = 1 year)
+    'p': "1Y" # Period (Ex: "1Y" = 1 year)
 }
 asels = get_price_data(param)
 #plt.title('Opening stock prices for IST: ASELS')
@@ -22,27 +22,27 @@ asels.to_csv('data/asels.csv', header=True)
 
 param = {
     'q': "THYAO", # Stock symbol (ex: "AAPL")
-    'i': "86400", # Interval size in seconds ("86400" = 1 day intervals)
+    'i': "900", # Interval size in seconds ("86400" = 1 day intervals)
     'x': "IST", # Stock exchange symbol on which stock is traded (ex: "NASD")
-    'p': "10Y" # Period (Ex: "1Y" = 1 year)
+    'p': "1Y" # Period (Ex: "1Y" = 1 year)
 }
 thy = get_price_data(param)
 thy.to_csv('data/thyao.csv', header=True)
 
 param = {
     'q': "ADNAC", # Stock symbol (ex: "AAPL")
-    'i': "86400", # Interval size in seconds ("86400" = 1 day intervals)
+    'i': "900", # Interval size in seconds ("86400" = 1 day intervals)
     'x': "IST", # Stock exchange symbol on which stock is traded (ex: "NASD")
-    'p': "10Y" # Period (Ex: "1Y" = 1 year)
+    'p': "1Y" # Period (Ex: "1Y" = 1 year)
 }
 adnac = get_price_data(param)
 adnac.to_csv('data/adnac.csv', header=True)
 
 param = {
     'q': "ALYAG", # Stock symbol (ex: "AAPL")
-    'i': "86400", # Interval size in seconds ("86400" = 1 day intervals)
+    'i': "900", # Interval size in seconds ("86400" = 1 day intervals)
     'x': "IST", # Stock exchange symbol on which stock is traded (ex: "NASD")
-    'p': "10Y" # Period (Ex: "1Y" = 1 year)
+    'p': "1Y" # Period (Ex: "1Y" = 1 year)
 }
 alyag = get_price_data(param)
 alyag.to_csv('data/alyag.csv', header=True)
