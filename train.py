@@ -1,19 +1,25 @@
 from agent.agent import Agent
+from keras.models import load_model
 from functions import *
 import sys
 
-if len(sys.argv) != 4:
+if len(sys.argv) < 4:
 	print ("Usage: python train.py [stock] [window] [episodes]")
 	exit()
 
 stock_name, window_size, episode_count = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
 
 agent = Agent(window_size)
+
+if len(sys.argv) > 4:
+	eposide_start = int(sys.argv[4])
+	agent.model = load_model("models/model_ep" + str(eposide_start))
+
 data = getStockDataVec(stock_name)
 l = len(data) - 1
 batch_size = 32
 
-for e in range(episode_count + 1):
+for e in range(eposide_start, episode_count + 1):
 	print ("Episode " + str(e) + "/" + str(episode_count))
 	state = getState(data, 0, window_size + 1)
 
