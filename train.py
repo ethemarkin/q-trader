@@ -11,6 +11,7 @@ stock_name, window_size, episode_count = sys.argv[1], int(sys.argv[2]), int(sys.
 
 agent = Agent(window_size)
 
+eposide_start = 0
 if len(sys.argv) > 4:
 	eposide_start = int(sys.argv[4])
 	agent.model = load_model("models/model_ep" + str(eposide_start))
